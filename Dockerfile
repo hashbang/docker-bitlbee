@@ -1,12 +1,19 @@
 FROM debian:wheezy
 
-RUN apt-get update && \
+
+
+RUN echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list && \
+apt-get update && \
     apt-get upgrade -y && \
+    apt-get install -y -t wheezy-backports libotr5-dev && \
     apt-get install -y \
         build-essential \
         libgnutls-dev \
         libglib2.0-dev \
-        libotr2-dev \
+        xsltproc \
+        xmlto \
+        asciidoc \
+        links \
         sudo \
         git && \
     apt-get clean && \
@@ -28,11 +35,11 @@ RUN git clone https://github.com/dequis/bitlbee.git && \
         --otr=plugin \
         --skype=plugin && \
         make && \
-        make install
+        make install && \
+        make install-etc && \
+        mkdir /var/lib/bitlbee
 
 VOLUME /var/lib/bitlbee
-
-ADD run.sh /tmp/run.sh
 
 RUN useradd bitlbee
 
