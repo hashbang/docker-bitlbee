@@ -1,3 +1,3 @@
 chown -R bitlbee /var/lib/bitlbee
-bitlbee
-stunnel /etc/stunnel/stunnel.conf
+exec sudo -u bitlbee bitlbee
+exec sudo -u bitlbee  stunnel /etc/stunnel/stunnel.conf
