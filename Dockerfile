@@ -50,7 +50,7 @@ ADD run.sh /tmp/run.sh
 
 VOLUME /var/lib/bitlbee
 
-EXPOSE 6667
+EXPOSE 6697
 
 # Default command to run on boot
 
