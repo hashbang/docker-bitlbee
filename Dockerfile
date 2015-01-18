@@ -39,8 +39,10 @@ RUN git clone https://github.com/dequis/bitlbee.git && \
         make install-etc && \
         mkdir /var/lib/bitlbee && \
         mkdir /var/run/bitlbee && \
+        mkdir /var/run/stunnel && \
         chown -R bitlbee /var/lib/bitlbee && \
-        chown -R bitlbee /var/run/bitlbee
+        chown -R bitlbee /var/run/bitlbee && \
+        chown -R bitlbee /var/run/stunnel
 
 ADD bitlbee.conf /etc/bitlbee/bitlbee.conf
 ADD stunnel.conf /etc/stunnel/stunnel.conf
