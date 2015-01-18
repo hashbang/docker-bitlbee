@@ -14,3 +14,6 @@ ExecStart=/usr/bin/docker run \
   hashbang/bitlbee
 
 ExecStop=/usr/bin/docker stop bitlbee
+
+[Install]
+WantedBy=multi-user.target
