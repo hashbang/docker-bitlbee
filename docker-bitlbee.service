@@ -1,0 +1,16 @@
+[Unit]
+Description=#! Bitlbee Server
+Author=Hashbang Team - team@hashbang.sh
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run \
+  -v /home/core/bitlbee/certs:/etc/ssl/localcerts \
+  -v /home/core/bitlbee/db/:/var/lib/bitlbee \
+  -p 6697:6697 \
+  --rm \
+  --name="bitlbee" \
+  hashbang/bitlbee
+
+ExecStop=/usr/bin/docker stop bitlbee
