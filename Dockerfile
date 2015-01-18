@@ -1,14 +1,11 @@
-FROM debian:wheezy
+FROM debian:jessie
 
-
-
-RUN echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list && \
-apt-get update && \
+RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y -t wheezy-backports libotr5-dev && \
     apt-get install -y \
+        libotr5-dev \
         build-essential \
-        libgnutls-dev \
+        libgnutls28-dev \
         libglib2.0-dev \
         xsltproc \
         xmlto \
