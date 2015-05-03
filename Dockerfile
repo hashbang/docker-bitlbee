@@ -24,6 +24,7 @@ RUN git clone https://github.com/bitlbee/bitlbee.git && \
     git fetch && \
     git checkout feat/hip-cat && \
     ./configure \
+        --debug=1 \
         --prefix=/usr \
         --etcdir=/etc/bitlbee \
         --sbindir=/usr/bin \
