@@ -19,7 +19,7 @@ RUN apt-get update && \
 
 RUN useradd bitlbee
 
-RUN git clone https://github.com/dequis/bitlbee.git && \
+RUN git clone https://github.com/bitlbee/bitlbee.git && \
     cd bitlbee && \
     git fetch && \
     git checkout feat/hip-cat && \
